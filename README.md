@@ -29,5 +29,6 @@ How I Organized the Repository
 A Sneak Peek at the Design
 
 Figure 1: Custom Carrier Board Layout - How the PCB is laid out
-
+![PCB Layout](docs/pcb_layout.png)
 Figure 2: Just to be sure - I checked to see if the PCB would fit inside the enclosure
+![EnclosureCheck](hardware/enclosure/images/DesignCheckGW.png)
