@@ -1,1 +1,11 @@
+# KiCad backups and temporary files
+*.bak
+*.bck
+*.kicad_prl
+*.kicad_pcb-bak
+fp-info-cache
+_autosave*
 
+# OS junk
+.DS_Store
+Thumbs.db
