@@ -1,12 +1,12 @@
 Ghost Writer: A Custom PCB Pen Plotter
 
-🚨 Status: Hardware Validation Phase - Where Things Currently Stand\
+Status: Hardware Validation Phase - Where Things Currently Stand\
 I've got a good bit accomplished: PCB design is complete and the enclosure has been modelled. Now, we're in the midst of validating the firmware.
 
-📖 About Ghost Writer - My Motivation Behind This Project\
+About Ghost Writer - My Motivation Behind This Project\
 To be honest, I was getting fed up with the standard open-source kits I'd been working with. They always seemed to struggle with getting the wiring tidy and electronics integration just right. That's what got me started on Ghost Writer.
 
-🔧 Key Engineering Features - What Makes This Pen Plotter Special
+Key Engineering Features - What Makes This Pen Plotter Special
 Custom Carrier Board: This was a beast to get right, but I did manage to design it in KiCad with a Seeed Studio Xiao (RP2040) at its heart, plus ULN2003 stepper drivers and SG90 servo logic all neatly sorted - no more messy wiring!\
 Enclosure - A Complicated Business: I designed a custom 3D-printed case with a clever "U-Slot" cable management system, which has allowed me to fit the top-mounted USB microcontroller into a low profile of just 30mm without any problems with mechanical interference.\
 Motion Control Firmware - Making It Work Smoothingly: I've also developed a custom C++ validation suite (GhostWriter_Test) to get the 28BYJ-48 stepper motors sorted and working smoothly, and control the servo pen-lift logic directly from the Seeed Xiao.\
