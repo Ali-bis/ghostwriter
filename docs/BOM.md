@@ -11,4 +11,5 @@
 | Hardware Kit    | Mechanical      | M3/M4/M5 Stainless Steel Screw & Nut Assortment (280 pcs)                   | 1   | ₹1,150      |
 | Breadboard      | Prototyping     | Themisto TH-B400 Breadboard (400 Tie Points)                                | 1   | ₹158        |
 | Jumper Wires    | Wiring          | 120 pcs Jumper Wire Set (MM / MF / FF)                                      | 1   | ₹198        |
-| **TOTAL**       |                 |                                                                             |     | **₹6,041**  |
+| PCB    | PCB          | Custom PCB by Lion Circuits                                         | 1   | ₹1589        |
+| **TOTAL**       |                 |                                                                             |     | **₹7630**  |
