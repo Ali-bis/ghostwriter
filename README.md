@@ -2,7 +2,8 @@
 Ghost Writer is a precision pen plotter that can be used to solve the "messy wiring" problem you usually get when you build one of those open-source plotter kits. To make that happen, I built a custom board that works with a compact - and 3D printed - parallel linkage gantry, which gives Ghost Writer high-torque motion control in a tiny footprint.
 
 Figure 1: The Final Assembled Project, shown in CAD
-![PCB Layout](docs/GW_assembled_vid.mp4)
+![assembled pic](docs/assembled_design_pic.png)
+![assembled vid](docs/GW_assembled_vid.mp4)
 🚀 Why I Did This
 Most open-source kits have a problem with cable management and getting the electronics to work together without breaking. Ghost Writer was made to move away from the "breadboard prototype" stage and into something a bit more robust.
 
