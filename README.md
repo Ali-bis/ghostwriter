@@ -1,26 +1,51 @@
-Ghost Writer: A Custom PCB Pen Plotter
+🖋️ Ghost Writer - A Custom PCB Pen Plotter
+Ghost Writer is a precision pen plotter that can be used to solve the "messy wiring" problem you usually get when you build one of those open-source plotter kits. To make that happen, I built a custom board that works with a compact - and 3D printed - parallel linkage gantry, which gives Ghost Writer high-torque motion control in a tiny footprint.
 
-Status: Hardware Validation Phase - Where Things Currently Stand\
-I've got a good bit accomplished: PCB design is complete and the enclosure has been modelled. Now, we're in the midst of validating the firmware.
+Figure 1: The Final Assembled Project, shown in CAD
+![PCB Layout](docs/GW_assembled_vid.mp4)
+🚀 Why I Did This
+Most open-source kits have a problem with cable management and getting the electronics to work together without breaking. Ghost Writer was made to move away from the "breadboard prototype" stage and into something a bit more robust.
 
-About Ghost Writer - My Motivation Behind This Project\
-To be honest, I was getting fed up with the standard open-source kits I'd been working with. They always seemed to struggle with getting the wiring tidy and electronics integration just right. That's what got me started on Ghost Writer.
+What I Wanted to Achieve:
+No More Messy Wiring: A custom PCB means you can ditch the jumper wires and use dedicated traces for power and signal instead.
+It's Super Compact: A custom 3D printed enclosure with a special cable management system keeps the whole thing at a tiny 30mm high.
+It Draws Precisely: Powered by high-torque NEMA 17 steppers and a Seeed Studio XIAO (RP2040) for real-time inverse kinematics - that's a mouthful, but basically it draws very nicely.
 
-Key Engineering Features - What Makes This Pen Plotter Special
-Custom Carrier Board: This was a beast to get right, but I did manage to design it in KiCad with a Seeed Studio Xiao (RP2040) at its heart, plus ULN2003 stepper drivers and SG90 servo logic all neatly sorted - no more messy wiring!\
-Enclosure - A Complicated Business: I designed a custom 3D-printed case with a clever "U-Slot" cable management system, which has allowed me to fit the top-mounted USB microcontroller into a low profile of just 30mm without any problems with mechanical interference.\
-Motion Control Firmware - Making It Work Smoothingly: I've also developed a custom C++ validation suite (GhostWriter_Test) to get the 28BYJ-48 stepper motors sorted and working smoothly, and control the servo pen-lift logic directly from the Seeed Xiao.\
-Mechanical Base - Starting from an Open-Source Design: I took the open-source EBAD Plotter gantry and tweaked it to fit the new custom electronics.\
-How the Repository is Organised
-/hardware/pcb - All the custom KiCad board files and fabrication outputs live in here.
 
-/hardware/enclosure - The STL files for the enclosure are stored here.
+🛠️ Hardware
+Here are the key bits that make Ghost Writer tick
+Main Processor: Seeed Studio XIAO RP2040 (a dual-core ARM Cortex M0+ processor)
+Motion: 2x NEMA 17 Stepper Motors (each one with a 1.8° step angle for smooth movement)
+Motor Drivers: 2x A4988 Stepper Drivers (these are super powerful and tuned to get the most out of the motors)
+Pen Lift: a SG90 Micro Servo that you can control with a pulse-width modulation signal
+Display: A tiny 0.96" I2C OLED Display so you can keep an eye on what's going on and where things are moving to
+Power: 12V 2A DC via a standard barrel jack
 
-/hardware/firmware - Grbl configuration for the RP2040 is still a work in progress.
+🏗️ Mechanical Design & CAD
+The enclosure was designed in Tinkercad with one main goal - stop the mechanical bits getting in the way of each other.
+Carrier Board Mounting: the PCB is held in place with 9mm internal pillars which keeps it nice and insulated from the rest of the robot.
+Parallel Linkage: the 80mm shoulder and 100mm forearm lengths give it a pretty generous drawing area for its size
+U-Slot Management: a special cable path keeps the wiring clear of the moving parts
+Figure 2: a clearance check between the custom PCB and the 3D printed housing
 
+📂 Repository Structure
+├── /hardware\
+│   ├── /pcb        # the KiCad board files and Fabrication outputs (Gerbers)\
+│   ├── /enclosure  # the STL files for the Box, Lid, and Linkage Arms\
+│   └── /firmware   # the custom C++ validation suite (GhostWriter_Test)\
+├── BOM.csv         # the Bill of Materials (itemised costs and links)\
+└── README.md       # the Project documentation\
+
+📋 Bill of Materials
+The breakdown of costs and sourcing is in the BOM.csv file.
+Note: This project tried to stay within a $100 budget by doing some creative 3D printing and choosing shipping methods that are pretty cost-effective
+
+⚙️ Firmware
+The system is currently running a custom C++ validation suite (GhostWriter_Test) to get the motors and servo working smoothly.
+At the moment: I'm still working on getting G-Code interpretation via GRBL for RP2040 to work properly.
+Motion Logic: the inverse kinematics calculations are being done on the second core of the RP2040 so the motor pulses are nice and smooth.
 A Sneak Peek at the Design
 
-Figure 1: Custom Carrier Board Layout - How the PCB is laid out
-![PCB Layout](docs/pcb_layout.png)
+
 Figure 2: Just to be sure - I checked to see if the PCB would fit inside the enclosure
 ![EnclosureCheck](hardware/enclosure/images/DesignCheckGW.png)
